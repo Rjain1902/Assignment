@@ -38,7 +38,7 @@ const Tab3 = () => {
         id="outlined-basic"
         label="Enter Count"
         variant="outlined"
-        onChange={(e) => setInputValue(Number(e.target.value))}
+        onChange={(e) => setInputValue((e.target.value))}
         value={inputValue}
       />
       <Button
