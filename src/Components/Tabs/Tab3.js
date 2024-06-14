@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import Typography from "@mui/material";
-import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-
 const Tab3 = () => {
   const [inputValue, setInputValue] = useState(0);
   const [messages, setMessages] = useState([]);
-
   const recursiveHello = (count) => {
     if (count <= 0) {
       setMessages((prev) => [...prev, "STOP"]);
@@ -18,12 +14,10 @@ const Tab3 = () => {
     setMessages((prev) => [...prev, "Hello Task"]);
     setTimeout(() => recursiveHello(count - 1), 1000);
   };
-
   const handleSubmit = () => {
     setMessages([]);
     recursiveHello(inputValue);
   };
-
   return (
     <div
       style={{
@@ -38,7 +32,7 @@ const Tab3 = () => {
         id="outlined-basic"
         label="Enter Count"
         variant="outlined"
-        onChange={(e) => setInputValue((e.target.value))}
+        onChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
       />
       <Button
@@ -52,7 +46,9 @@ const Tab3 = () => {
       <div>
         <List>
           {messages.map((msg, index) => (
-            <ListItem disablePadding style={{margin:'5px'}}>{msg}</ListItem>
+            <ListItem disablePadding style={{ margin: "5px" }}>
+              {msg}
+            </ListItem>
           ))}
         </List>
       </div>

@@ -8,7 +8,6 @@ const Tab2 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
  const data = useSelector((state) => state.data);
- console.log(data)
   const handleClick = () => {
     navigate("/Tab3");
   };
@@ -18,7 +17,6 @@ const Tab2 = () => {
 
   return (
     <div style={{display:'flex',flexDirection:'column',alignItems:'center'}} className="mt-10">
-     
       {data?.length> 0 && (
         <ul style={{display:"flex",gap:'20px',justifyContent:'center'}}>
           {data.map(user => (

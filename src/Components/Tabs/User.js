@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 export default function MediaCard({user_data}) {
-  const {avatar,email,first_name,id,last_name}=user_data
+  const {avatar,email,first_name,last_name}=user_data
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia

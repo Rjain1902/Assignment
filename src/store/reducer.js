@@ -1,34 +1,33 @@
-import { FETCH_FAILURE,FETCH_SUCCESS,FETCH_REQUEST } from "./action";
-const initialState={
-  data:[],
-  isLoading:false,
-  error:null
-}
+import { FETCH_FAILURE, FETCH_SUCCESS, FETCH_REQUEST } from "./action";
+const initialState = {
+  data: [],
+  isLoading: false,
+  error: null,
+};
 
- const reducer=(state=initialState,action)=>{
-  switch(action.type){
+const reducer = (state = initialState, action) => {
+  switch (action.type) {
     case FETCH_REQUEST:
-      return{
+      return {
         ...state,
-        isLoading:true,
-        error:null
+        isLoading: true,
+        error: null,
       };
     case FETCH_SUCCESS:
-      return{
+      return {
         ...state,
-        isLoading:false,
-        data:action.payload.data
+        isLoading: false,
+        data: action.payload.data,
       };
     case FETCH_FAILURE:
-      return{
+      return {
         ...state,
-        isLoading:false,
-        error:action.payload
+        isLoading: false,
+        error: action.payload,
       };
-      default:
-        return state;
+    default:
+      return state;
   }
+};
 
-}
-
-export default reducer
+export default reducer;
